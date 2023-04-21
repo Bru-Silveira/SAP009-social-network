@@ -3,7 +3,7 @@
 ## Índice
 
 * [1. Prefácio](#1-prefácio)
-* [2. Resumo do projeto](#2-resumo-do-projeto)
+* [2. Students 2 Students](#2-students-to-students)
 * [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
 * [4. Considerações gerais](#4-considerações-gerais)
 * [5. Critérios de aceitação mínimos do
@@ -29,27 +29,20 @@ para químicos onde os usuários podem publicar artigos a respeito de suas
 pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
 determinadas tags ou popularidade, mais recente ou mais comentado.
 
-## 2. Resumo do projeto
+## 2. Students 2 Students
+### 2.1 Definição de Produto
+Neste projeto construímos uma Rede Social voltada para estudantes da Língua Inglesa interessados em praticar o idioma com outros estudantes, postando informações os mais variados assuntos, desde regras gramaticais à interesses pessoais.
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
+(INSERIR FOTO DA HOME)
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
+Chegamos à definição final do produto através de pesquisa com usuários reais, que demonstraram interesse em um espaço de compartilhamento de conhecimentos e prática. Identificamos que a maioria dos interessados (40%) se encontravam na faixa etária dos 31 à 40 anos de idade, e com isso conseguimos definir a identidade visual da Students 2 Students - cores que representam tranquilidade e comunicação.
+Também definimos o inglês como idioma padrão de toda a aplicação (com exceção da página inicial, que explica o produto para visitantes), visto que aproximadamente 50% dos usuários possuem nível de Inglês Intermediário.
 
-O objetivo principal de aprendizagem deste projeto é construir uma [Single-page
-Application
-(SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-[_responsiva_](https://curriculum.laboratoria.la/pt/topics/css/02-responsive) (com mais de uma tela/ página) na
-qual seja possível **ler e escrever dados**.
+
 
 ## 3. Objetivos de aprendizagem
 
-Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
+Com este projeto, os seguintes objetivos de aprendizagem foram atingidos:
 
 ### HTML
 
@@ -300,8 +293,13 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
   * [Regras de segurança do Firebase - Documentação oficial](https://firebase.google.com/docs/rules?hl=pt-BR)
   * [Receber atualizações em tempo real com o Cloud Firestore - Documentação oficial](https://firebase.google.com/docs/firestore/query-data/listen?hl=pt-BR)
 </p></details>
-
-## 4. Considerações gerais
+## 4. Histórias de Usuário
+## 5. Protótipo de Baixa Fidelidade
+## 6. Protótipo de Alta Fidelidade
+## 7. Responsividade
+## 8. Teste de Usabilidade
+## 9. Testes Unitários
+## 10. Considerações Técnicas
 
 * Este projeto deve ser desenvolvido em trios.
 
