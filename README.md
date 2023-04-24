@@ -101,11 +101,11 @@ Nos primeiros rascunhos, o Students 2 Students foi surgindo já bem parecido com
 Já a timeline não ficou tão bem definida inicialmente. Pensamos em criar comunidades, onde os usuários poderiam criar postagens sobre temas específicos. Porém, devido ao tempo estimado para a entrega do projeto, decidimos criar apenas uma timeline principal, que fica melhor definida com os protótipos de alta fidelidade.
 
 ## 5. Protótipo de Alta Fidelidade
-![High Fidelity Prototype Home](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/high-fidelity-prototype-home.jpg)
+![High Fidelity Prototype Home](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/high-fidelity-prototype-home.png)
 
 Com o protótipo de alta fidelidade, a identidade visual da Students 2 Students se tornou visível. Poucas alterações foram feitas. 
 
-![High Fidelity Prototype Feed](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/high-fidelity-prototype-feed.jpg)
+![High Fidelity Prototype Feed](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/high-fidelity-prototype-feed.png)
 
 E, como dito anteriormente, precisamos abrir mão do feed das comunidades para focar nos objetivos de aprendizagem e no prazo estimado para entrega. 
 
