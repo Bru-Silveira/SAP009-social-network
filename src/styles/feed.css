@@ -10,7 +10,7 @@
 .write-post{
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
 .write-post h2{
     color: #004AAD;

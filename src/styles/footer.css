@@ -24,7 +24,7 @@ footer h1 {
    
 }
 
-footer {
+.footer-main {
     position: relative;
     bottom: 0;
     background-color: #004AAD;

@@ -2,6 +2,7 @@ import logoGithub from '../../img/github.png';
 
 export default () => {
   const footerContainer = document.createElement('footer');
+  footerContainer.classList.add('footer-main');
   const footerTemplate = `
 <div id="div-footer">
   <h1>Desenvolvido por:</h1>
