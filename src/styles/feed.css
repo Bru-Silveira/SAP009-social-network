@@ -5,18 +5,42 @@
 .feed-container{
     display: flex;
     flex-direction: column;
+
 }
 .write-post{
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
 }
 .write-post h2{
     color: #004AAD;
     font-weight: 400;
     font-size: 20px;
 }
+.username-h2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+}
 .user-area{
-    display: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin-left: 10vw; */
+    margin-top: 2vw;
+    width: 50vw;
+    justify-content: left;
+}
+.display-username{
+    display: block;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 50vw;
+    color: #004AAD;
+    font-weight: 700;
+    margin-left: 4vw;;
 }
 .post-area{
     width: 80vw;
@@ -87,22 +111,22 @@
     .write-post h2{
         width: 40vw;
         display: flex;
-        margin-left: 15vw;
     }
     .user-post-area{
         display: flex;
-        flex-direction: row;
-        /* align-items: center; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
     .user-area{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
     }
     .display-username{
         display: flex;
         align-content: center;
-        justify-content: center;
+        justify-content: left;
         width: 15vw;
         color: #004AAD;
         font-weight: 700;
@@ -113,5 +137,8 @@
     }
     .text-area{
         width: 90%
+    }
+    #user-logged-icon{
+        margin-left: 5vw;
     }
 }

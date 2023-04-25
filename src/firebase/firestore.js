@@ -16,8 +16,6 @@ import {
 
 import { app } from './configuration.js';
 
-const auth = getAuth(app);
-
 const db = getFirestore(app);
 
 async function newPost(textpost) {
@@ -33,7 +31,10 @@ async function newPost(textpost) {
   await addDoc(collection(db, 'posts'), createPosts);
 }
 
-const getUserData = () => auth.currentUser;
+const getUserData = () => {
+  const auth = getAuth(app);
+  return auth.currentUser;
+};
 
 async function findPosts(showPosts) {
   const queryOrder = query(collection(db, 'posts'), orderBy('date', 'desc'));
@@ -92,5 +93,5 @@ export {
   likePosts,
   dislikePosts,
   like,
-  auth,
+  getPostById,
 };

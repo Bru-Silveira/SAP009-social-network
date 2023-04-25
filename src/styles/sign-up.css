@@ -60,6 +60,11 @@
     flex-direction: column;
     padding: 3em;
 }
+.error {
+    color: red;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
 #error-signup {
     color: red;
     font-size: 15px;
