@@ -115,7 +115,8 @@ Todas as telas da nossa aplicação foram prototipadas e criadas a partir do con
 ## 7. Teste de Usabilidade
 Realizamos testes de usabilidade com usuários reais para diagnosticar qualquer dificuldade ou erro que pudesse ser encontrada em nossa aplicação. Os seguintes problemas foram percebidos:
 
-INSERIR PROBLEMAS ENCONTRADOS
+- Ao clicar no menu hamburguer, abre-se uma barra lateral. Porém, esta só se fecha ao clicar em um botão de fechar, mas não fecha quando clicamos em outros locais da tela.
+- O header das telas de feed, FAQ e About Us não estão fixos. Assim, o usuário precisa rolar até o topo da tela para ter acesso ao menu.
 
 ## 8. Testes Unitários
 Para este projeto, construímos os testes unitários necessários para cobrir 100% das branches, lines e functions. Nosso código passam em todos os testes.
