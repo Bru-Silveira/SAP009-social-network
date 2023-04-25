@@ -16,7 +16,7 @@
 #logo-complete {
     width: 20em;
     height: 12em;
-    margin-top: 93px;
+    margin-top: 60vh;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -69,7 +69,7 @@
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30vh;
+    margin-top: 50vh;
 }
 
 /* divs de cada ícone e texto*/
