@@ -22,7 +22,7 @@ export default () => {
       <p>Sim! Basta você entrar em "sign in" e verá a opção "Sign in with Google"("Login com Google")
       e assim o login será a feito através da sua conta do Google/Gmail e você será redirecionado para a 
       página do feed.</p>
-      <h2>O que podemos no S2S?</h2>
+      <h2>O que podemos fazer no S2S?</h2>
       <p>A ideia é que aqui, você possa dar dicar e sugestões sobre e em Inglês. Em nosso projeto futuro,
       queremos que todos possam iteragir comentando e pedindo ajuda sobre a cultura que envolver o idioma!</p>
       <h1>Feel free to explore S2S!</h1>

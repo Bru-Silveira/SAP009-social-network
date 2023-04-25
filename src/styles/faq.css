@@ -1,5 +1,9 @@
+.about-section {
+    margin-top: 40px;
+}
 .faq-container {
-   margin: 3rem;
+   margin-right: 3rem;
+   margin-left: 3rem;
 }
 h1 {
     font-family: 'Montserrat', sans-serif;

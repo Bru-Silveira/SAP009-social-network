@@ -10,6 +10,7 @@ body, ul {
     box-sizing: border-box;
     display: flex;
     align-items: center;
+    z-index: 5;
 }
 #menu-feed {
     display: flex;

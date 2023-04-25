@@ -15,12 +15,14 @@ export default () => {
   const feedTemplate = `
 <div class="feed-container">
   <div class="write-post">
-    <h2>Share your thoughts...</h2>
     <div class="user-post-area">
-    <div class="user-area">  
-      <img src="${userIcon}" class="user-icon">
-      <div class="display-username"></div>
-    </div>
+      <div class="username-h2">
+        <div class="user-area">
+          <img src="${userIcon}" class="user-icon" id="user-logged-icon">
+          <div class="display-username"></div>
+        </div>
+        <h2>Share your thoughts...</h2>
+      </div>
       <div class="post-area">
         <div class="textarea-div">
           <textarea placeholder="What's up?" class="text-area" required></textarea>

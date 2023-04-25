@@ -10,12 +10,13 @@ import {
   arrayUnion,
   arrayRemove,
   deleteDoc,
+  getDoc,
 } from 'firebase/firestore';
 import {
-  auth,
   newPost,
   getUserData,
   findPosts,
+  like,
   likePosts,
   dislikePosts,
   deletePost,
@@ -25,6 +26,9 @@ import {
 
 jest.mock('firebase/auth');
 jest.mock('firebase/firestore');
+beforeEach(() => {
+  jest.clearAllMocks();
+});
 
 describe('newPost', () => {
   it('should create a new post and add it to the collection in the database', async () => {
@@ -64,10 +68,9 @@ describe('getUserData', () => {
         uid: 12345,
       },
     };
-    auth.mockReturnValueOnce(mockAuth);
+    getAuth.mockReturnValueOnce(mockAuth);
 
-    expect(getUserData).toHaveBeenCalledTimes(1);
-    expect(getUserData).toHaveReturnedWith(undefined);
+    expect(getUserData()).toStrictEqual(mockAuth.currentUser);
   });
 });
 
@@ -79,7 +82,7 @@ describe('findPosts', () => {
     query.mockReturnValueOnce(mockQuery);
     const mockCollection = 'collection';
     collection.mockReturnValueOnce(mockCollection);
-    onSnapshot.mockResolvedValueOnce([
+    onSnapshot.mockReturnValueOnce([
       {
         id: '1',
         data: () => ({ post: 'Post one' }),
@@ -89,19 +92,15 @@ describe('findPosts', () => {
         data: () => ({ post: 'Post two' }),
       },
     ]);
-    const getPost = await findPosts();
-    expect(getPost).toEqual([
-      { id: '1', post: 'Post one' },
-      { id: '2', post: 'Post two' },
-    ]);
+    await findPosts();
     expect(orderBy).toHaveBeenCalledTimes(1);
-    expect(orderBy).toHaveBeenCalledWith('data');
+    expect(orderBy).toHaveBeenCalledWith('date', 'desc');
     expect(collection).toHaveBeenCalledTimes(1);
     expect(collection).toHaveBeenCalledWith(undefined, 'posts');
     expect(query).toHaveBeenCalledTimes(1);
     expect(query).toHaveBeenCalledWith(mockCollection, mockOrderBy);
     expect(onSnapshot).toHaveBeenCalledTimes(1);
-    expect(onSnapshot).toHaveBeenCalledWith(mockQuery);
+    expect(onSnapshot).toHaveBeenCalledWith(mockQuery, () => {});
   });
 });
 
@@ -139,7 +138,7 @@ describe('dislikePosts', () => {
     const postId = 'post-id';
     const userId = 'nomeTeste';
     const post = {
-      likesUsuaria: mockUnion,
+      likes: mockUnion,
     };
     await dislikePosts(postId, userId);
 
@@ -149,6 +148,24 @@ describe('dislikePosts', () => {
     expect(updateDoc).toHaveBeenCalledWith(mockDoc, post);
     expect(arrayRemove).toHaveBeenCalledTimes(1);
     expect(arrayRemove).toHaveBeenCalledWith(userId);
+  });
+});
+
+describe('like', () => {
+  it('should check if the user liked or not the post', async () => {
+    const mockPostId = 428039842093;
+    const mockUserId = 123456;
+    const mockPost = {
+      likes: [123456],
+    };
+
+    await like(mockPostId, mockUserId);
+    expect(dislikePosts).toHaveBeenCalledTimes(1);
+    expect(dislikePosts).toHaveBeenCalledWith(mockPost);
+    expect(dislikePosts).toHaveReturnedWith(false);
+    expect(likePosts).toHaveBeenCalledTimes(1);
+    expect(likePosts).toHaveBeenCalledWith(mockPost);
+    expect(likePosts).toHaveReturnedWith(true);
   });
 });
 
@@ -175,11 +192,31 @@ describe('editPost', () => {
     const post = 'editContent';
     const updatePost = {
       post,
+      editDate: new Date().toLocaleDateString('pt-BR'),
     };
     await editPost(postId, post);
     expect(doc).toHaveBeenCalledTimes(1);
     expect(doc).toHaveBeenCalledWith(undefined, 'posts', postId);
     expect(updateDoc).toHaveBeenCalledTimes(1);
     expect(updateDoc).toHaveBeenCalledWith(mockDoc, updatePost);
+  });
+});
+
+describe('getPostById', () => {
+  it('should access infos of a post by its id', async () => {
+    const mockDoc = 'doc';
+    doc.mockReturnValueOnce(mockDoc);
+    const mockGetDoc = 'getDoc';
+    getDoc.mockReturnValueOnce(mockGetDoc);
+    const getPost = await getPostById();
+    const postId = 'post-id';
+    expect(getPost).toEqual([
+      { id: '1', post: 'Post one' },
+      { id: '2', post: 'Post two' },
+    ]);
+    expect(doc).toHaveBeenCalledTimes(1);
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', postId);
+    expect(getDoc).toHaveBeenCalledTimes(1);
+    expect(getDoc).toHaveBeenCalledWith(undefined, 'posts');
   });
 });
