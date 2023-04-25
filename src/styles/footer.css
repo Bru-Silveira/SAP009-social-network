@@ -28,7 +28,7 @@ footer {
     position: relative;
     bottom: 0;
     background-color: #004AAD;
-    width: 100%;
+    width: 100vw;
     text-align: center;
     justify-content: center;
     display: flex;
