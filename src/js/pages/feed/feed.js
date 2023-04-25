@@ -13,7 +13,8 @@ export default () => {
   feedContainer.classList.add('feed-section');
 
   const feedTemplate = `
-<div class="feed-container">
+  <div class="feed-container">
+  <div class="header-space"></div>
   <div class="write-post">
     <div class="user-post-area">
       <div class="username-h2">

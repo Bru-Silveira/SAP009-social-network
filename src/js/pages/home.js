@@ -10,6 +10,7 @@ export default () => {
 
   const homeTemplate = `
 <div class="home-main">
+  <div class="header-space"></div>
   <div class="home-initial-text">
     <img id="logo-complete" src="${logoComplete}">  
     <h1>The best social media for learning English!</h1>

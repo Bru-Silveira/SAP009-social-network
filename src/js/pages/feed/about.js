@@ -10,6 +10,7 @@ export default () => {
   aboutContainer.classList.add('about-section');
 
   const aboutTemplate = `
+  <div class="header-space"></div>
   <div class="about-container">
     <div class="about-we">
         <h1>Who are we?</h1>

@@ -9,6 +9,7 @@ export default () => {
   loginContainer.classList.add('login-section');
 
   const loginTemplate = `
+<div class="header-space"></div>
 <form class="form-login" action="">
   <div class="card-login">
     <div class="card-top">
