@@ -10,8 +10,8 @@ export default () => {
 
   const homeTemplate = `
 <div class="home-main">
-  <img id="logo-complete" src="${logoComplete}">
-  <div class="home-initial-text">  
+  <div class="home-initial-text">
+    <img id="logo-complete" src="${logoComplete}">  
     <h1>The best social media for learning English!</h1>
     <br>
     <h2>A melhor rede social para aprender Inglês!</h2>
@@ -24,7 +24,7 @@ export default () => {
     </div>
     <div class="icons-text-home">
       <img src="${logo}" alt="Logo s2s three people icon" class="icons-home">
-      <p class="text-home">Participe de comunidades sobre músicas, filmes, séries, memes, gramática e muito mais.</p>
+      <p class="text-home">Pratique inglês com outros estudantes do idioma.</p>
     </div>
     <div class="icons-text-home">
       <img src="${pen}" alt="Pen to square icon" class="icons-home">
@@ -35,11 +35,11 @@ export default () => {
       <p class="text-home">Curta conteúdos de outras pessoas e faça amizades.</p>
     </div>
   </div>
-  <div id="button-home">  
-    <button id="sign-in-home-button">
-      <a href="/#login">SIGN IN</a>
-    </button>
-  </div>
+</div>
+<div id="button-home">  
+  <button id="sign-in-home-button">
+    <a href="/#login">SIGN IN</a>
+  </button>
 </div>
   `;
 

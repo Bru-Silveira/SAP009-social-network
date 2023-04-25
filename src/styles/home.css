@@ -1,12 +1,12 @@
 .home-section {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     margin-bottom: 10em;
 }
 .home-main {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -27,14 +27,14 @@
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     height: 270px;
 }
 
 /*título principal em azul*/
 .home-initial-text h1 {
-    position: absolute;
     height: 118px;
     top: 261px;
     font-size: 2em;
@@ -49,7 +49,6 @@
 
 /*título secundário em laranja*/
 .home-initial-text h2 {
-    position: absolute; 
     height: 118px;
     top: 365px;
     font-size: 1.75em;
@@ -70,6 +69,7 @@
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 30vh;
 }
 
 /* divs de cada ícone e texto*/
@@ -84,7 +84,7 @@
 
 /*texto ao lado dos ícones*/
 .text-home {
-    position: relative;
+    /* position: relative; */
     height: 100%;
     width: 50vw;
     left: 85px;
@@ -94,21 +94,22 @@
     color: #000000; 
     align-items: center;  
     text-align: justify;
+    margin-left: 3vw;
 }
 
 /*ícones ao lado dos textos*/
 .icons-home {
-    position:absolute;
+    /* position:absolute; */
     width: 40px;
     height: 40px;
 }
 
 /* div botão*/
 #button-home {
-    position: relative;
+    /* position: relative; */
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 100vw;
     display: grid;
     justify-items: center;
     margin-top: 3em;
@@ -116,7 +117,7 @@
 
 /* texto do botão*/
 #sign-in-home-button {
-    position: absolute;
+    /* position: absolute; */
     width: 150px;
     height: 60px;
     background: #EF681A;
@@ -133,28 +134,46 @@
     border: 1px solid #F0EBE8(30, 30, 30, 0.2);
     cursor: pointer;
 }
-@media screen and (min-width: 600px) {
-    .icons-text-home {
-        margin-left: 140px;
-    }
-    #logo-complete {
-        margin-left: 150px;
-        padding: 30px;
-    }
-    .home-initial-text h1 {
-        font-size: 25px;
-        margin-right: 600px;
-    }
-    .home-initial-text h2 {
-        font-size: 25px;
-        margin-right: 600px;
-    }
-    .main-content-home {
-        margin-left: 500px;
-    }
+@media screen and (min-width: 1000px) {
     .home-main {
         display: flex;
         flex-direction: row;
+    }
+    #logo-complete {
+        margin-top: 10rem;
+    }
+    .home-initial-text {
+        width: 40vw;
+        display: flex;
+        justify-content: left;
+
+    }
+    .home-initial-text h1 {
+        font-size: 25px;
+        width: 40vw;
+        padding: 0;
+    }
+    .home-initial-text h2 {
+        font-size: 25px;
+        width: 40vw;
+    }
+    .main-content-home {
+        margin-top: 10rem;
+        border-left: 1px solid #004AAD;
+        width: 40vw;
+        font-size: 15px;
+    }
+    #button-home {
+        justify-items: center;
+    }
+    .icons-text-home {
+        margin-bottom: 5vh;
+        margin-top: 2rem;
+        margin-left: 5vw;
+        width: 40vw;
+    }
+    .text-home {
+        width: 35vw;
     }
 }
 
