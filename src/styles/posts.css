@@ -15,7 +15,7 @@
     margin-left: 1em;
 }
 .div-body-post{
-    margin-left: 0.5em;
+    margin: 1em;
 }
 .body-post{
     width: 60vw;
@@ -26,6 +26,7 @@
     outline: none;
     background: #F0EBE8;
     color: black;
+    margin: 1em;
 }
 .footer-post{
     background: #F0EBE8;

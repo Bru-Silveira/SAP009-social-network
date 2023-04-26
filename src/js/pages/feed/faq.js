@@ -3,6 +3,7 @@ export default () => {
   faqContainer.classList.add('about-section');
 
   const faqTemplate = `
+  <div class="header-space"></div>
   <div class="faq-container">
     <h1>Perguntas mais frequentes:</h1>
     <div class="questions">

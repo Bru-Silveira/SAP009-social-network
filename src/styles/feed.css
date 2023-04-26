@@ -1,3 +1,6 @@
+.header-space{
+    height: 100px;
+}
 .feed-section{
     font-family: 'Montserrat', sans-serif;
     background:  #F0EBE8;
@@ -40,7 +43,7 @@
     width: 50vw;
     color: #004AAD;
     font-weight: 700;
-    margin-left: 4vw;;
+    margin-left: 4vw;
 }
 .post-area{
     width: 80vw;
