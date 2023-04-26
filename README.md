@@ -117,6 +117,10 @@ Realizamos testes de usabilidade com usuários reais para diagnosticar qualquer 
 
 - Ao clicar no menu hamburguer, abre-se uma barra lateral. Porém, esta só se fecha ao clicar em um botão de fechar, mas não fecha quando clicamos em outros locais da tela.
 - O header das telas de feed, FAQ e About Us não estão fixos. Assim, o usuário precisa rolar até o topo da tela para ter acesso ao menu.
+- Os links do GitHub e LinkedIn não abrem em nova página, sendo necessário retornar ao site.
+- Apesar da notificação de erro quando as senhas não são iguais, o cadastro é criado normalmente. O mesmo acontece com o erro de username caso o valor inserido não tenha a quantidade de caracteres estabelecida.
+- Ao redefinir senha pelo link enviado por email, o usuário não é redirecionado para a rede social.
+- Não há opção de visualização da senha que está sendo inserida.
 
 ## 8. Testes Unitários
 Para este projeto, construímos os testes unitários necessários para cobrir 100% das branches, lines e functions. Nosso código passam em todos os testes.
