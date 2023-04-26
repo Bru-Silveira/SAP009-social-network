@@ -3,15 +3,14 @@
 ## Índice
 
 * [1. Prefácio](#1-prefácio)
-* [2. Resumo do projeto](#2-resumo-do-projeto)
-* [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-* [4. Considerações gerais](#4-considerações-gerais)
-* [5. Critérios de aceitação mínimos do
-  projeto](#5-criterios-de-aceitação-mínimos-do-projeto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Guias, dicas e leituras
-  complementares](#8-guias-dicas-e-leituras-complementares)
+* [2. Students 2 Students](#2-students-2-students)
+* [3. Histórias de Usuário](#3-histórias-de-usuário)
+* [4. Protótipo de Baixa Fidelidade](#4-protótipo-de-baixa-fidelidade)
+* [5. Protótipo de Alta Fidelidade](#5-protótipo-de-alta-fidelidade)
+* [6. Resposividade](#6-responsividade)
+* [7. Teste de Usabilidade](#7-teste-de-usabilidade)
+* [8. Testes Unitários](#8-testes-unitários)
+* [9. Considerações Técnicas](#9-considerações-técnicas)
 
 ***
 
@@ -29,27 +28,107 @@ para químicos onde os usuários podem publicar artigos a respeito de suas
 pesquisas, comentar os artigos de seus colegas e filtrar artigos de acordo com
 determinadas tags ou popularidade, mais recente ou mais comentado.
 
-## 2. Resumo do projeto
+## 2. Students 2 Students
+### 2.1 Definição de Produto
+Neste projeto construímos uma Rede Social voltada para estudantes da Língua Inglesa interessados em praticar o idioma com outros estudantes, postando informações os mais variados assuntos, desde regras gramaticais à interesses pessoais.
 
-Neste projeto você construirá uma Rede Social sobre o que você e sua equipe
-decidirem. Pode ser, por exemplo, sobre alimentação saudável, feminismo,
-educação, saúde, energias renováveis, amantes das
-[Empanadas](https://pt.wikipedia.org/wiki/Empanada), de
-[Tacos](https://pt.wikipedia.org/wiki/Taco_(culin%C3%A1ria)), de
-[Feijoada](https://pt.wikipedia.org/wiki/Feijoada), ou do que seja.
+![Students 2 Students Logo](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/logo-s2s-com-fundo.png)
 
-Sua Rede Social terá que permitir à qualquer usuário criar uma conta de acesso,
-logar-se com ela, criar, editar, deletar e dar _likes_ em publicações.
+Chegamos à definição final do produto através de pesquisa com usuários reais, que demonstraram interesse em um espaço de compartilhamento de conhecimentos e prática. Identificamos que a maioria dos interessados (40%) se encontravam na faixa etária dos 31 à 40 anos de idade, e com isso conseguimos definir a identidade visual da Students 2 Students - cores que representam tranquilidade e comunicação.
+Também definimos o inglês como idioma padrão de toda a aplicação (com exceção da página inicial, que explica o produto para visitantes), visto que aproximadamente 50% dos usuários possuem nível de Inglês Intermediário.
 
-O objetivo principal de aprendizagem deste projeto é construir uma [Single-page
-Application
-(SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-[_responsiva_](https://curriculum.laboratoria.la/pt/topics/css/02-responsive) (com mais de uma tela/ página) na
-qual seja possível **ler e escrever dados**.
+## 3. Histórias de Usuário
+### 3.1 História de Usuário 1
+**Eu, como estudante de inglês, gostaria de me cadastrar e fazer login em uma rede social para trocar experiências com outros estudantes do idioma.**
 
-## 3. Objetivos de aprendizagem
+Para atender ao primeiro usuário, definimos os seguintes critérios de aceitação:
+- Página inicial explicativa.
+- Header com direcionamento para a tela de login e de cadastro.
+- Campos de preenchimento de dados.
+- Mensagens de erro descritivas.
+- Link para recuperação de senha.
 
-Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projeto. Pense nisso para decidir sua estratégia de trabalho.
+![User Story 1](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/user-story-1.png)
+
+### 3.2 História de Usuário 2
+**Eu, como estudante de inglês, gostaria de logar na rede social Students 2 Students utilizando minha conta do Google, para me conectar com mais facilidade.**
+
+Para o segundo usuário, os seguintes critérios de aceitação foram estabelecidos:
+- Botão para login com google.
+- Pop-up onde o usuário pode selecionar a conta do google que deseja utilizar.
+
+![User Story 2](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/user-story-2.png)
+
+### 3.3 História de Usuário 3
+**Eu, como cadastrado no app s2s, gostaria de compartilhar textos em inglês com outras pessoas que também estão aprendendo o idioma para praticar a minha escrita.**
+
+Os critérios de aceitação para a terceira história de usuário foram os seguintes:
+- Tela da timeline.
+- Campo para digitação de texto.
+- Botão para compartilhar.
+
+![User Story 3](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/user-story-3.png)
+
+### 3.4 História de Usuário 4
+**Eu, como cadastrado no app s2s, gostaria de visualizar postagens de outros usuários e curtir e descurti-las quando desejar para expressar o que é interessante para mim.**
+
+O quarto usuário teve os seguintes critérios de aceitação atendidos:
+- Timeline com posts de diversos usuários.
+- Botão de curtir e descurtir.
+
+![User Story 4](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/user-story-4.png)
+
+### 3.5 História de Usuário 5
+**Eu, como cadastrado no app s2s, gostaria de editar e excluir textos que eu postei para atualizá-los.**
+
+Os seguintes critérios de aceitação foram atendidos para o quinto usuário:
+- Botão para editar postagem.
+- Caixa de texto editável.
+- Botão para salvar edição.
+- Botão para cancelar a edição.
+- Botão para excluir postagem.
+- Confirmação de exclusão.
+
+![User Story 5](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/user-story-5.png)
+
+## 4. Protótipo de Baixa Fidelidade
+![Low Fidelity Prototype Home](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/low-fidelity-prototype-home.jpg)
+
+Nos primeiros rascunhos, o Students 2 Students foi surgindo já bem parecido com o produto final. Prototipamos uma tela inicial com explicações sobre o objetivo do produto, tela de login e de cadastro com os campos necessários para o preenchimento das informações pessoais dos usuários.
+
+![Low Fidelity Prototype Feed](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/low-fidelity-prototype-feed.jpeg)
+
+Já a timeline não ficou tão bem definida inicialmente. Pensamos em criar comunidades, onde os usuários poderiam criar postagens sobre temas específicos. Porém, devido ao tempo estimado para a entrega do projeto, decidimos criar apenas uma timeline principal, que fica melhor definida com os protótipos de alta fidelidade.
+
+## 5. Protótipo de Alta Fidelidade
+![High Fidelity Prototype Home](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/high-fidelity-prototype-home.png)
+
+Com o protótipo de alta fidelidade, a identidade visual da Students 2 Students se tornou visível. Poucas alterações foram feitas. 
+
+![High Fidelity Prototype Feed](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/high-fidelity-prototype-feed.png)
+
+E, como dito anteriormente, precisamos abrir mão do feed das comunidades para focar nos objetivos de aprendizagem e no prazo estimado para entrega. 
+
+## 6. Responsividade
+Todas as telas da nossa aplicação foram prototipadas e criadas a partir do conceito Mobile First, pensando primeiramente em telas de dispositivos móveis. Mais tarde, aplicamos a responsividade para telas de desktop, tornando a S2S adaptável para ser acessada em qualquer dispositivo.
+
+## 7. Teste de Usabilidade
+Realizamos testes de usabilidade com usuários reais para diagnosticar qualquer dificuldade ou erro que pudesse ser encontrada em nossa aplicação. Os seguintes problemas foram percebidos:
+
+- Ao clicar no menu hamburguer, abre-se uma barra lateral. Porém, esta só se fecha ao clicar em um botão de fechar, mas não fecha quando clicamos em outros locais da tela.
+- O header das telas de feed, FAQ e About Us não estão fixos. Assim, o usuário precisa rolar até o topo da tela para ter acesso ao menu.
+- Os links do GitHub e LinkedIn não abrem em nova página, sendo necessário retornar ao site.
+- Apesar da notificação de erro quando as senhas não são iguais, o cadastro é criado normalmente. O mesmo acontece com o erro de username caso o valor inserido não tenha a quantidade de caracteres estabelecida.
+- Ao redefinir senha pelo link enviado por email, o usuário não é redirecionado para a rede social.
+- Não há opção de visualização da senha que está sendo inserida.
+
+## 8. Testes Unitários
+Para este projeto, construímos os testes unitários necessários para cobrir 100% das branches, lines e functions. Nosso código passam em todos os testes.
+
+## 9. Considerações Técnicas
+### 9.1. Objetivos de aprendizagem
+
+Com este projeto, os seguintes objetivos de aprendizagem foram atingidos:
 
 ### HTML
 
@@ -301,7 +380,6 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
   * [Receber atualizações em tempo real com o Cloud Firestore - Documentação oficial](https://firebase.google.com/docs/firestore/query-data/listen?hl=pt-BR)
 </p></details>
 
-## 4. Considerações gerais
 
 * Este projeto deve ser desenvolvido em trios.
 
@@ -331,220 +409,63 @@ Reflita e depois enumere os objetivos que quer alcançar e aplique no seu projet
 
 Para começar, você precisará criar um _fork_ e _clone_ deste repositório.
 
-## 5. Critérios de aceitação mínimos do projeto
+### Boilerplate
 
-### 5.1 Boilerplate
+Para este projeto, definimos a estrutura de pastas e escrevemos nossos próprios testes unitários (_tests_). Para
+isso, nos guiamos por meio de projetos anteriores.
 
-Este projeto não inclui um _boilerplate_, portanto você terá que definir a
-estrutura de pastas e escrever seus próprios testes unitários (_tests_). Para
-isso, você pode guiar-se por meio de projetos anteriores.
-Este projeto não inclui um _boilerplate_ completo, apenas alguns arquivos de
-configuração básica, então você terá que definir a estrutura de pastas e
-escrever seus próprios testes de unidade (_tests_). Para isso, você pode ser guiado
-por projetos anteriores e/ou organizar os arquivos seguindo uma estrutura de
-[Model-View-Controller](https://developer.mozilla.org/es/docs/Glossary/MVC).
-
-Neste projeto vamos utilizar uma ferramenta chamada
-[Vite](https://vitejs.dev/) para empacotar nossos módulos e iniciar
+Neste projeto utilizamos uma ferramenta chamada [Vite](https://vitejs.dev/) para empacotar nossos módulos e iniciar
 o servidor de desenvolvimento, que disponibiliza nossos arquivos usando
-a estratégia `Hot Module Replacement`
-[(HMR)](https://vitejs.dev/guide/features.html#hot-module-replacement),
-isso significa que quando você faz alterações em arquivos que estão sendo
-hosteados, o navegador será atualizado automaticamente sem a necessidade
-de fazê-lo manualmente para recarregar todo o site. Você deve ter um
-cuidado especial para não ter nenhuma _dependência circular_ em seu código já
+a estratégia `Hot Module Replacement` [(HMR)](https://vitejs.dev/guide/features.html#hot-module-replacement),
+isso significa que quando fazemos alterações em arquivos que estão sendo hosteados, o navegador será atualizado automaticamente sem a necessidade
+de fazê-lo manualmente para recarregar todo o site. Tivemos um
+cuidado especial para não ter nenhuma _dependência circular_ no código já
 [que pode causar problemas com o HMR](https://vitejs.dev/guide/troubleshooting.html#full-refresh-occurs-instead-of-hmr).
 (O `eslint-plugin-import` tem a regra
 [import/no-cycle](https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md)
 que notificará se os tiver.)
 
-### 5.2 Definição do produto
-
-No `README.md`, conte-nos brevemente como você mapeou as necessidades dos seus
-usuários e como você chegou à definição final do seu produto. É importante que
-detalhe:
-
-* Quem são os principais usuários do produto.
-* Qual problema o produto resolve/para que ele serve para esses usuários.
-
-### 5.3 Histórias de usuário
-
-Depois de entender as necessidades de seus usuários, escreva as Histórias de
-Usuário. Elas representam tudo o que ele precisa fazer/ver na Rede Social.
-Cada uma de suas histórias de usuário deve possuir:
-
-* **Critérios de aceitação:** tudo o que deve acontecer para satisfazer as
-  necessidades do usuário.
-
-* **Definição de pronto:** todos os aspectos técnicos que devem ser atendidos
-  para que, como equipe, saibam que essa história está finalizada e pronta para
-  ser publicada. **Todas** suas histórias de usuário (com exceções), devem
-  incluir esses aspectos em sua definição de pronto (além de tudo o que precisa
-  adicionar):
-
-  - Ser uma SPA.
-  - Ser _responsivo_.
-  - Receber _code review_ de pelo menos uma parceira de outra equipe.
-  - Fazer _tests_ unitários.
-  - Fazer testes manuais buscando erros e imperfeições simples.
-  - Fazer testes de usabilidade e incorporar o _feedback_ dos usuários como
-    melhorias.
-  - Fazer deploy do aplicativo e marcar a versão (git tag).
-
-### 5.4 Desenho da Interface de Usuário (protótipo de baixa fidelidade)
-
-Você deve definir qual será o fluxo que o usuário seguirá dentro do seu
-aplicativo e, com isso, criar a interface do usuário (UI) que siga este fluxo.
-
-### 5.5 Responsivo
-
-Deve funcionar bem em dispositivos de tela grande (computadores, laptops etc.) e
-pequena (_tablets_, telefones celulares etc.). Sugerimos seguir a técnica
-[_`mobile first`_](#mobile-first) (mais detalhes sobre essa técnica ao final).
-
-### 5.6 Considerações sobre o comportamento da Interface do Usuário (UI)
-
-Essas considerações ajudarão você a escrever as definições de pronto de sua
-H.U.:
 
 #### Criação e login de conta de usuário
 
 * _Login_ com Firebase:
-  - Para o _login_ e postagens na timeline, você pode usar o
+  - Para o _login_ e postagens na timeline, usamos o
     [Firebase](https://firebase.google.com/products/database/)
-  - O usuário deve poder criar uma conta de acesso ou autenticar-se com conta de
+  - O usuário pode criar uma conta de acesso ou autenticar-se com conta de
     e-mail e senha e também com uma conta do Google.
 * Validações:
   - Somente usuários com contas válidas têm acesso permitido.
-  - Não haver usuários repetidos.
-  - O que o usuário digita no campo de senha (_input_) deve ser secreto.
+  - Não háusuários repetidos.
+  - O que o usuário digita no campo de senha (_input_) é secreto.
 * Comportamento:
-  - Quando o formulário de registro ou login é enviado, ele deve ser validado.
-  - Se houver erros, mensagens descritivas devem ser exibidas para ajudar o
+  - Quando o formulário de registro é enviado, ele é validado.
+  - Quando ocorrem erros, mensagens descritivas são exibidas para ajudar o
     usuário.
 
 #### Timeline/linha do tempo
 
 * Validações:
-  - Ao publicar, deve ser validado se há conteúdo no _input_.
+  - Ao publicar, é validado se há conteúdo no _input_.
 * Comportamento:
-  - Ao recarregar o aplicativo, é necessário verificar se o usuário está
-    _logado_ antes de exibir o conteúdo,
-  - Conseguir publicar um _post_.
-  - Poder dar e remover _likes_ em uma publicação. Máximo de um por usuário.
+  - Ao recarregar o aplicativo, é verificado se o usuário está _logado_ antes de exibir o conteúdo,
+  - É possível publicar um _post_.
+  - É possível dar e remover _likes_ em uma publicação. Máximo de um por usuário.
   - Visualizar contagem de _likes_.
-  - Poder excluir uma postagem específica.
-  - Solicitar confirmação antes de excluir um _post_.
-  - Ao clicar em editar um _post_, você deve alterar o texto para um _input_ que
+  - Pode excluir uma postagem específica.
+  - Solicita confirmação antes de excluir um _post_.
+  - Ao clicar em editar um _post_, o texto é alterado para um _input_ que
     permite editar o texto e salvar as alterações.
-  - Ao salvar as alterações, você deve voltar ao texto normal, mas com a
+  - Ao salvar as alterações, volta ao texto normal, mas com a
     informação editada.
-  - Ao recarregar a página, poder ver os textos editados.
+  - Ao recarregar a página, pode-se ver os textos editados.
 
-### 5.7 Considerações técnicas sobre front-end
+### 9.2 Considerações técnicas sobre front-end
 
-* Separar a manipulação do DOM da lógica (separação de responsabilidades).
-* Ter várias telas. Para isso, seu aplicativo deve ser um [Single Page
+* A manipulação do DOM está separada da lógica (separação de responsabilidades).
+* Há várias telas. Para isso, nosso aplicativo é um [Single Page
   Application
   (SPA)](https://pt.wikipedia.org/wiki/Aplicativo_de_p%C3%A1gina_%C3%BAnica)
-* Alterar e persistir dados. Os dados que você adiciona ou modifica devem
-  persistir por todo o aplicativo. Recomendamos que você use o
-  [Firebase](https://firebase.google.com/) para isso também.
+* Alterar e persistir dados. Os dados que você adiciona ou modifica persistem por todo o aplicativo. 
+Utilizamos o [Firebase](https://firebase.google.com/) para isso também.
 
-#### Testes unitários
 
-* Lembre-se de que não há _setup_ de **testes** definido, isso dependerá da
-  estrutura do seu projeto. Você não deve esquecer de pensar sobre os testes.
-  Eles podem ajudar a definir a estrutura e sua lógica.
-
-* Os testes de unidade devem cobrir no mínimo 70% de _statements_, _functions_,
-  _lines_ e _branches_.
-
-### 5.8 Considerações técnicas UX
-
-* Faça pelo menos 2 entrevistas com os usuários.
-* Faça um protótipo de baixa e alta fidelidade.
-* Verifique se a implementação do código segue as diretrizes do protótipo.
-* Faça sessões de teste de usabilidade com o produto em HTML.
-
-## 6. Hacker Edition
-
-As seções chamadas _Hacker Edition_ são **opcionais**. Se **você terminou** e
-cumpriu todos os requisitos acima e sobrou tempo, tente concluí-las. Dessa
-forma, você pode aprofundar e/ou exercitar mais os objetivos de aprendizagem do
-projeto.
-
-* Criar posts com imagens.
-* Procurar usuários, adicionar e excluir "amigos".
-* Definir a privacidade de _posts_ (público ou apenas para amigos).
-* Permitir ver na linha do tempo de usuários "não amigos" apenas os posts
-  públicos.
-* Permitir comentar ou responder a uma postagem.
-* Editar perfil.
-
-## 7. Entrega
-
-O projeto será entregue subindo seu código no GitHub (`commit` /`push`) e a
-interface será exibida usando páginas do GitHub ou outro serviço de hospedagem
-(Firebase, Netlify, Vercel, etc) que você pode ter encontrado pelo caminho.
-Verifica a [Documentação Vite](https://vitejs.dev/guide/static-deploy.html)
-para orientá-lo sobre isso.
-
-***
-
-## 8. Guias, dicas e leituras complementares
-
-### Mobile first
-
-O conceito de [_mobile
-first_](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/) faz
-referência a um processo de desenho e desenvolvimento que parte de como se vê e
-como funciona uma aplicação primeiro em um dispositivo móvel e mais adiante se
-analisa como adaptar a aplicação à telas progressivamente maiores. Esta é uma
-contraposição ao modelo tradicional, no qual primeiro se desenha os websites (ou
-webapps) para desktops e depois os adaptam para telas menores.
-
-A motivação aqui é se assegurar que desde o começo sejam desenhadas telas
-_responsivas_. Dessa forma, começamos com a aparência e o comportamento do
-aplicativo em uma tela e ambiente móvel.
-
-### Múltiplas telas
-
-Em projetos anteriores, nossas aplicações eram compostas de apenas uma tela
-_principal_ (uma só _página_). Neste projeto, precisaremos dividir nossa
-interface em várias _views_ ou _pages_ e oferecer uma maneira de navegar entre
-essas telas. Esse problema pode ser resolvido de várias maneiras: com arquivos
-HTML independentes (cada um com seu próprio URL) e links tradicionais; mantendo
-na memória e renderizando condicionalmente (sem atualizar a página);
-[manipulando o histórico do
-navegador](https://developer.mozilla.org/pt-BR/docs/Web/API/History_API)
-com
-[`window.history`](https://developer.mozilla.org/es/docs/Web/API/Window/history).
-Neste projeto, convidamos você a explorar opções e decidir sobre uma opção de
-implementação.
-
-### Gravação de dados
-
-Nos projetos anteriores, consumimos dados, mas ainda não tínhamos escrito dados
-(salvar alterações, criar dados, excluir, etc). Neste projeto, você precisará
-criar (salvar) novos dados, além de ler, atualizar e modificar os dados
-existentes. Esses dados podem ser salvos remotamente usando o
-[Firebase](https://firebase.google.com/).
-
-Para usar o Firebase, você deve criar um projeto no [console](https://console.firebase.google.com/) do Firebase e
-instale a dependência `firebase` usando `npm`.
-Leia [instruções passo a passo aqui](https://firebase.google.com/docs/web/setup).
-
-Outras:
-
-* [Evento hashchange ](https://developer.mozilla.org/es/docs/Web/API/Window/hashchange_event)
-* [Mobile
-  First](https://tableless.com.br/mobile-first-a-arte-de-pensar-com-foco/)
-* [Mobile First Is NOT Mobile Only - Nielsen Norman
-  Group](https://www.nngroup.com/articles/mobile-first-not-mobile-only/)
-* [Flexbox - CSS
-  Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [Módulos:
-  Export](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/export)
-* [Módulos:
-  Import](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/import)
