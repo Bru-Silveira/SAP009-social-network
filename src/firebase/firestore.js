@@ -46,6 +46,7 @@ async function findPosts(showPosts) {
     showPosts(posts);
   });
 }
+
 async function likePosts(postId, userId) {
   await updateDoc(doc(db, 'posts', postId), {
     likes: arrayUnion(userId),

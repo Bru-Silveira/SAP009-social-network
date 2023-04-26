@@ -56,6 +56,7 @@
     border: none;
     height: 32px;
     background: #F0EBE8;
+    cursor: pointer;
 }
 .editing-buttons{
     width: 87px;
