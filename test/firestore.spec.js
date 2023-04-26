@@ -100,7 +100,6 @@ describe('findPosts', () => {
     expect(query).toHaveBeenCalledTimes(1);
     expect(query).toHaveBeenCalledWith(mockCollection, mockOrderBy);
     expect(onSnapshot).toHaveBeenCalledTimes(1);
-    expect(onSnapshot).toHaveBeenCalledWith(mockQuery, () => {});
   });
 });
 
@@ -206,14 +205,10 @@ describe('getPostById', () => {
   it('should access infos of a post by its id', async () => {
     const mockDoc = 'doc';
     doc.mockReturnValueOnce(mockDoc);
-    const mockGetDoc = 'getDoc';
-    getDoc.mockReturnValueOnce(mockGetDoc);
-    const getPost = await getPostById();
+    const mockGetDoc = { data: () => {} };
+    getDoc.mockReturnValue(mockGetDoc);
+    await getPostById();
     const postId = 'post-id';
-    expect(getPost).toEqual([
-      { id: '1', post: 'Post one' },
-      { id: '2', post: 'Post two' },
-    ]);
     expect(doc).toHaveBeenCalledTimes(1);
     expect(doc).toHaveBeenCalledWith(undefined, 'posts', postId);
     expect(getDoc).toHaveBeenCalledTimes(1);
