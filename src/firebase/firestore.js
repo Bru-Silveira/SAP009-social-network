@@ -91,8 +91,5 @@ export {
   findPosts,
   editPost,
   deletePost,
-  likePosts,
-  dislikePosts,
   like,
-  getPostById,
 };

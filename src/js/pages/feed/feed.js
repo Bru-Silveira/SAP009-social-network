@@ -57,8 +57,6 @@ export default () => {
   shareBtn.addEventListener('click', async () => {
     if (textPost.value.length > 0) {
       await newPost(textPost.value);
-      /*       postRef = await readOnePost(postRef.id); */
-      /*       publishedPost.appendChild(timelinePosts(postRef)); */
       textPost.innerHTML = '';
     }
     textPost.value = '';
