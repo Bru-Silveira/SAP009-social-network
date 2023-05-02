@@ -123,7 +123,9 @@ Realizamos testes de usabilidade com usuários reais para diagnosticar qualquer 
 - Não há opção de visualização da senha que está sendo inserida.
 
 ## 8. Testes Unitários
-Para este projeto, construímos os testes unitários necessários para cobrir 100% das branches, lines e functions. Nosso código passam em todos os testes.
+Para este projeto, deveríamos construir os testes unitários necessários, que deveriam cobrir um mínimo de 70% dos statements, branches, lines e functions. Nossos testes ultrapassaram essa porcentagem, porém não atingiram 100%, conforme visto na imagem abaixo:
+
+![Tests Passed](https://github.com/marinacezario/SAP009-social-network/blob/main/src/img/tests-passed.png)
 
 ## 9. Considerações Técnicas
 ### 9.1. Objetivos de aprendizagem
