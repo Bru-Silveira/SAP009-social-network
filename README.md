@@ -383,33 +383,11 @@ Com este projeto, os seguintes objetivos de aprendizagem foram atingidos:
 </p></details>
 
 
-* Este projeto deve ser desenvolvido em trios.
+* Este projeto foi desenvolvido em trios.
 
-* O intervalo de tempo estimado para concluir o projeto é de 4 a 5 Sprints.
-
-* A lógica do projeto deve estar implementada completamente em JavaScript
-  (ES6+), HTML e CSS :smiley:. Para este projeto **não está permitido** o uso de
+* A lógica do projeto deve está implementada completamente em JavaScript
+  (ES6+), HTML e CSS :smiley:. Não foi feito uso de
   _frameworks_ ou bibliotecas de CSS e JS.
-
-* A divisão e organização do trabalho deve permitir, sem exceção, que **cada
-  integrante** da equipe pratique a aprendizagem de tudo que está envolvido em
-  **cada história**. _Não dividam o trabalho como em uma fábrica._
-
-* Está avançando em seus projetos com alguma fluidez e sem grandes problemas?
-  Seja generosa com suas parceiras, deixe-as aprender e praticar sem restrições,
-  mesmo que demore um pouco mais. Aproveite para _mentorá-las_, para fazer _pair
-  programming_. Uma das melhores formas de aprender é explicar verbalmente.
-
-* Está sentindo dificuldade e para você é mais difícil de avançar? Não fique com
-  as partes "fáceis" do projeto. Converse, negocie, busque sua oportunidade de
-  praticar e aprender o que é mais difícil para você.
-
-* Vocês apenas poderão trabalhar em uma história por vez. Não avancem para a
-  próxima sem completar a anterior. As histórias apenas são concluídas quando se
-  completam **todos** os critérios de aceitação + **toda** sua definição de
-  pronto.
-
-Para começar, você precisará criar um _fork_ e _clone_ deste repositório.
 
 ### Boilerplate
 
