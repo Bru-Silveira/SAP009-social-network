@@ -17,11 +17,8 @@ import {
   getUserData,
   findPosts,
   like,
-  likePosts,
-  dislikePosts,
   deletePost,
   editPost,
-  getPostById,
 } from '../src/firebase/firestore.js';
 
 jest.mock('firebase/auth');
@@ -103,68 +100,55 @@ describe('findPosts', () => {
   });
 });
 
-describe('likePosts', () => {
-  it('should like the post clicked', async () => {
-    updateDoc.mockResolvedValue();
-    const mockDoc = 'doc';
-    doc.mockReturnValueOnce(mockDoc);
-    const mockUnion = 'union';
-    arrayUnion.mockReturnValueOnce(mockUnion);
-
-    const postId = 'post-id';
-    const userId = 'nomeTeste';
-    const post = {
-      likes: mockUnion,
-    };
-
-    await likePosts(postId, userId);
-    expect(doc).toHaveBeenCalledTimes(1);
-    expect(doc).toHaveBeenCalledWith(undefined, 'posts', postId);
-    expect(updateDoc).toHaveBeenCalledTimes(1);
-    expect(updateDoc).toHaveBeenCalledWith(mockDoc, post);
-    expect(arrayUnion).toHaveBeenCalledTimes(1);
-    expect(arrayUnion).toHaveBeenCalledWith(userId);
-  });
-});
-
-describe('dislikePosts', () => {
-  it('should dislike the post clicked', async () => {
-    updateDoc.mockResolvedValue();
-    const mockDoc = 'doc';
-    doc.mockReturnValueOnce(mockDoc);
-    const mockUnion = 'union';
-    arrayRemove.mockReturnValueOnce(mockUnion);
-    const postId = 'post-id';
-    const userId = 'nomeTeste';
-    const post = {
-      likes: mockUnion,
-    };
-    await dislikePosts(postId, userId);
-
-    expect(doc).toHaveBeenCalledTimes(1);
-    expect(doc).toHaveBeenCalledWith(undefined, 'posts', postId);
-    expect(updateDoc).toHaveBeenCalledTimes(1);
-    expect(updateDoc).toHaveBeenCalledWith(mockDoc, post);
-    expect(arrayRemove).toHaveBeenCalledTimes(1);
-    expect(arrayRemove).toHaveBeenCalledWith(userId);
-  });
-});
-
 describe('like', () => {
-  it('should check if the user liked or not the post', async () => {
+  it('should add user like on a post if they havent liked it yet', async () => {
+    const mockPostId = 428039842093;
+    const mockUserId = 123456;
+    const mockPost = {
+      likes: [],
+    };
+    const mockDoc = 'doc';
+    doc.mockReturnValue(mockDoc);
+    getDoc.mockResolvedValueOnce({ data: () => mockPost });
+    updateDoc.mockResolvedValueOnce();
+    arrayUnion.mockReturnValueOnce([mockUserId]);
+
+    const result = await like(mockPostId, mockUserId);
+
+    expect(doc).toHaveBeenCalledTimes(2);
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', mockPostId);
+    expect(getDoc).toHaveBeenCalledTimes(1);
+    expect(getDoc).toHaveBeenCalledWith(mockDoc);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(mockDoc, { likes: [mockUserId] });
+    expect(arrayUnion).toHaveBeenCalledTimes(1);
+    expect(arrayUnion).toHaveBeenCalledWith(mockUserId);
+    expect(result).toEqual({ liked: true, count: 1 });
+  });
+
+  it('should remove user like on a post if they have liked it already', async () => {
     const mockPostId = 428039842093;
     const mockUserId = 123456;
     const mockPost = {
       likes: [123456],
     };
+    const mockDoc = 'doc';
+    doc.mockReturnValue(mockDoc);
+    getDoc.mockResolvedValueOnce({ data: () => mockPost });
+    updateDoc.mockResolvedValueOnce();
+    arrayRemove.mockReturnValueOnce([mockUserId]);
 
-    await like(mockPostId, mockUserId);
-    expect(dislikePosts).toHaveBeenCalledTimes(1);
-    expect(dislikePosts).toHaveBeenCalledWith(mockPost);
-    expect(dislikePosts).toHaveReturnedWith(false);
-    expect(likePosts).toHaveBeenCalledTimes(1);
-    expect(likePosts).toHaveBeenCalledWith(mockPost);
-    expect(likePosts).toHaveReturnedWith(true);
+    const result = await like(mockPostId, mockUserId);
+
+    expect(doc).toHaveBeenCalledTimes(2);
+    expect(doc).toHaveBeenCalledWith(undefined, 'posts', mockPostId);
+    expect(getDoc).toHaveBeenCalledTimes(1);
+    expect(getDoc).toHaveBeenCalledWith(mockDoc);
+    expect(updateDoc).toHaveBeenCalledTimes(1);
+    expect(updateDoc).toHaveBeenCalledWith(mockDoc, { likes: [mockUserId] });
+    expect(arrayRemove).toHaveBeenCalledTimes(1);
+    expect(arrayRemove).toHaveBeenCalledWith(mockUserId);
+    expect(result).toEqual({ liked: false, count: 0 });
   });
 });
 
@@ -198,20 +182,5 @@ describe('editPost', () => {
     expect(doc).toHaveBeenCalledWith(undefined, 'posts', postId);
     expect(updateDoc).toHaveBeenCalledTimes(1);
     expect(updateDoc).toHaveBeenCalledWith(mockDoc, updatePost);
-  });
-});
-
-describe('getPostById', () => {
-  it('should access infos of a post by its id', async () => {
-    const mockDoc = 'doc';
-    doc.mockReturnValueOnce(mockDoc);
-    const mockGetDoc = { data: () => {} };
-    getDoc.mockReturnValue(mockGetDoc);
-    await getPostById();
-    const postId = 'post-id';
-    expect(doc).toHaveBeenCalledTimes(1);
-    expect(doc).toHaveBeenCalledWith(undefined, 'posts', postId);
-    expect(getDoc).toHaveBeenCalledTimes(1);
-    expect(getDoc).toHaveBeenCalledWith(undefined, 'posts');
   });
 });
